@@ -3,58 +3,75 @@
  * Template Name: Main page
  */
 ?>
-<div id="photoCarousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
-            <img src="<?= get_template_directory_uri(); ?>/dist/images/bg/carousel-cement.png" alt="" class="carousel-photo">
+<? if (have_rows('photos')): ?>
+    <div id="photoCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+
+            <?php $isFirst = true;
+            while (have_rows('photos')) : the_row();
+                $subField = get_sub_field('photos_photo'); ?>
+                <div class="carousel-item <?= $isFirst ? "active" : "" ?>">
+                    <img class="carousel-photo" src="<?= $subField['sizes']['large'] ?>" alt="<?= $subField['alt'] ?>" title="<?= $subField['title'] ?>">
+                </div>
+                <?php $isFirst = false;
+            endwhile;
+            ?>
         </div>
-        <div class="carousel-item ">
-            <img src="<?= get_template_directory_uri(); ?>/dist/images/bg/carousel-cement.png" alt="" class="carousel-photo">
-        </div>
+        <a class="carousel-control carousel-control-prev" data-slide="prev"></a>
+        <a class="carousel-control carousel-control-next" data-slide="next"></a>
     </div>
-    <a class="carousel-control carousel-control-prev" data-slide="prev"></a>
-    <a class="carousel-control carousel-control-next" data-slide="next"></a>
-</div>
+<?php endif; ?>
 <?php get_template_part('templates/services'); ?>
-<div class="container-fluid  projectCarousel"  >
+<div class="container-fluid  projectCarousel">
     <h2 class="page-header  page-header_white">проекты</h2>
-    <div  class=" carousel slide container" id="projectCarousel" data-ride="carousel">
+    <div class=" carousel slide container" id="projectCarousel" data-ride="carousel">
         <div class="carousel-controls">
             <a class="carousel-control carousel-control-prev" data-slide="prev" href="#projectCarousel"></a>
             <a class="carousel-control carousel-control-next" data-slide="next" href="#projectCarousel"></a>
         </div>
+        <? $photos = [];
 
+        if (have_rows('photos_projects')):
+            while (have_rows('photos_projects')) : the_row();
+                $subField = get_sub_field('photos_photo');
+                $photos[] = [
+                    'src' => $subField['sizes']['large'],
+                    'alt' => $subField['alt'],
+                    'title' => $subField['title'],
+                ];
+            endwhile;endif;
+        $maxRows = count($photos); ?>
         <div class="carousel-inner carousel-inner_3" role="listbox">
-            <div class="carousel-item  active">
-                <img  class="col-4 carousel-img" src="http://placehold.it/350x180?text=1">
-                <img  class="col-4 carousel-img" src="http://placehold.it/350x180?text=2">
-                <img  class="col-4 carousel-img" src="http://placehold.it/350x180?text=3">
-            </div>
-            <div class="carousel-item ">
-                <img  class="col-4 carousel-img" src="http://placehold.it/350x180?text=4">
-                <img  class="col-4 carousel-img" src="http://placehold.it/350x180?text=5">
-                <img  class="col-4 carousel-img" src="http://placehold.it/350x180?text=6">
-            </div>
+            <?php $isFirst = true;
+            for ($i = 0; $i < $maxRows; $i = $i + 3): ?>
+                <div class="carousel-item   <?= $isFirst ? "active" : "" ?>">
+                    <img class="col-4 carousel-img" src="<?= $photos[$i]['src'] ?>"  alt="<?= $photos[$i]['alt'] ?>"  title="<?= $photos[$i]['title'] ?>">
+                    <img class="col-4 carousel-img" src="<?= $photos[$i+1]['src'] ?>"  alt="<?= $photos[$i+1]['alt'] ?>"  title="<?= $photos[$i+1]['title'] ?>">
+                    <img class="col-4 carousel-img" src="<?= $photos[$i+2]['src'] ?>"  alt="<?= $photos[$i+2]['alt'] ?>"  title="<?= $photos[$i+2]['title'] ?>">
+                </div>
+                <?php $isFirst = false;
+            endfor; ?>
         </div>
 
         <div class="carousel-inner carousel-inner_2" role="listbox">
-            <div class="carousel-item  active">
-                <img  class="col-6 carousel-img" src="http://placehold.it/350x180?text=1">
-                <img  class="col-6 carousel-img" src="http://placehold.it/350x180?text=2">
-            </div>
-            <div class="carousel-item ">
-                <img  class="col-6 carousel-img" src="http://placehold.it/350x180?text=4">
-                <img  class="col-6 carousel-img" src="http://placehold.it/350x180?text=5">
-            </div>
+            <?php $isFirst = true;
+            for ($i = 0; $i < $maxRows; $i = $i + 2): ?>
+                <div class="carousel-item   <?= $isFirst ? "active" : "" ?>">
+                    <img class="col-6 carousel-img" src="<?= $photos[$i]['src'] ?>"  alt="<?= $photos[$i]['alt'] ?>"  title="<?= $photos[$i]['title'] ?>">
+                    <img class="col-6 carousel-img" src="<?= $photos[$i+1]['src'] ?>"  alt="<?= $photos[$i+1]['alt'] ?>"  title="<?= $photos[$i+1]['title'] ?>">
+                </div>
+                <?php $isFirst = false;
+            endfor; ?>
         </div>
 
         <div class="carousel-inner carousel-inner_1" role="listbox">
-            <div class="carousel-item  active">
-                <img  class="col-12 carousel-img" src="http://placehold.it/350x180?text=1">
-            </div>
-            <div class="carousel-item ">
-                <img  class="col-12 carousel-img" src="http://placehold.it/350x180?text=4">
-            </div>
+            <?php $isFirst = true;
+            for ($i = 0; $i < $maxRows; $i = $i + 1): ?>
+                <div class="carousel-item   <?= $isFirst ? "active" : "" ?>">
+                    <img class="col-12 carousel-img" src="<?= $photos[$i]['src'] ?>"  alt="<?= $photos[$i]['alt'] ?>"  title="<?= $photos[$i]['title'] ?>">
+                </div>
+                <?php $isFirst = false;
+            endfor; ?>
         </div>
 
     </div>

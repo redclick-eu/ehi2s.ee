@@ -7,14 +7,16 @@
             <div class="col-12 col-xl-8  footer-info">
                 <div class="container">
                     <div class="row justify-content-center">
+                        <?php $page = new WP_Query(['pagename' => 'mainpage']);
+                        $page->the_post(); ?>
                         <div class="info-item info-item_phone">
-                            <span class="info-text">+372 552 35 91</span>
+                            <span class="info-text"><?= get_field('i_phone'); ?></span>
                         </div>
                         <div class="info-item info-item_mail">
-                            <span class="info-text">Info@ehi2s.com</span>
+                            <span class="info-text"><?= get_field('i_mail'); ?></span>
                         </div>
                         <div class="info-item info-item_adr">
-                            <span class="info-text">Kopli 86-38, Harjumaa,  Tallinn</span>
+                            <span class="info-text"><?= get_field('i_adress'); ?></span>
                         </div>
                         <div class="info-item info-item_fb"></div>
                     </div>
@@ -23,6 +25,7 @@
         </div>
     </div>
     <div class="row">
-        <span class="copyright">2018 © Ehi2s OÜ; Все права защищены; Reg kood: 14132030; KMKR: EE101952918</span>
+        <span class="copyright"><?= get_field('i_copyright'); ?></span>
+        <?php wp_reset_postdata(); ?>
     </div>
 </footer>
