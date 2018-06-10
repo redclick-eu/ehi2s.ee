@@ -1,0 +1,1 @@
+<h2 class="page-header"><?php echo get_the_title()?></h2>

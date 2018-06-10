@@ -1,0 +1,153 @@
+body.modal-open {
+    .header {
+        padding-right: 32px;
+    }
+    .header_fullScreen {
+        padding-right: 0 !important;
+    }
+}
+
+.header {
+    position: relative;
+    height: 140px;
+    background: $orange linear-gradient(to right, $orange 0%, $orange 51%, $white 51%, $white 100%);
+    &-bg {
+        background-color: $orange;
+
+        &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-bottom: 140px solid $white;
+            border-left: 140px solid transparent;
+            content: "";
+        }
+    }
+
+    &-logo {
+        width: 65%;
+        padding: 10px 0 0 0;
+        &_smallMenu {
+            padding: 5px 0 5px 0;
+        }
+    }
+    &_fullScreen {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 99999;
+        width: 100vw;
+        height: 0;
+        overflow: hidden;
+        background-color: $gray;
+        transition: height .5s;
+
+        &.show {
+            height: 96vh !important;
+        }
+        li {
+            margin: 20px;
+            font-size: 30px;
+            text-align: center;
+            a {
+                color: $white;
+                &:hover {
+                    color: $orange;
+                }
+            }
+        }
+    }
+    &-info {
+        display: flex;
+        height: 140px;
+        padding-bottom: 30px;
+        background-color: $white;
+
+        align-items: center;
+        justify-content: center;
+    }
+    .info {
+        &-item {
+            display: flex;
+            height: 45px;
+            padding: 0 0 0 65px;
+            font-size: 14px;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            align-items: center;
+
+            &_phone {
+                background-image: url("../images/icons/phone-y.svg");
+            }
+            &_mail {
+                background-image: url("../images/icons/mail-y.svg");
+            }
+            &_adr {
+                background-image: url("../images/icons/adr-y.svg");
+            }
+            &_fb {
+                padding: 0;
+                background-image: url("../images/icons/fb-y.svg");
+            }
+        }
+    }
+    &-btn {
+        width: 100%;
+        height: 40px;
+        cursor: pointer;
+        background: $orange center no-repeat;
+        background-size: contain;
+        border-radius: 5px;
+        transition: .15s;
+        &_phone {
+            background-image: url("../images/icons/btn_call.svg");
+        }
+        &_menu {
+            background-image: url("../images/icons/btn_menu.svg");
+        }
+
+        &:hover {
+            background-color: darken($orange, 5%);
+        }
+
+        &:active {
+            background-color: darken($orange, 10%);
+        }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, xl)) {
+        .info-item {
+            height: 39px;
+            padding: 0 0 0 80px;
+            margin: 0 0 5px 0;
+        }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, lg)) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1200;
+        width: 100%;
+        height: 85px;
+        background: $white;
+        &-bg {
+            background-color: $white;
+            &::after {
+                content: none;
+            }
+        }
+
+        &-logo {
+            width: 190px;
+        }
+        .info-item {
+            height: 39px;
+            padding: 0 0 0 80px;
+            margin: 5px 0 5px 0;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+.navBar {
+    position: absolute;
+    bottom: -30px;
+    z-index: 1;
+    font-size: 14px;
+    background-color: $gray-dark;
+    .menu {
+        display: flex;
+        &-item {
+            position: relative;
+            display: flex;
+            height: 65px;
+            margin: 0 20px;
+            color: $white;
+            text-transform: uppercase;
+
+            align-items: center;
+
+            &:hover {
+                .menu_sub {
+                    display: block !important;
+                }
+            }
+        }
+
+        &-url {
+            line-height: 65px;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+        &_sub {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            display: none;
+            transform: translate(-50%, 0);
+
+            &-item {
+                width: 200px;
+                padding: 20px 30px;
+                margin-bottom: 1px;
+                text-align: center;
+                background-color: $white;
+            }
+        }
+    }
+}
+
+.navBarTop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100vw;
+    height: 0;
+    overflow: hidden;
+    background-color: black;
+    transition: height 1s;
+    &.show {
+        height: 100vh;
+    }
+}

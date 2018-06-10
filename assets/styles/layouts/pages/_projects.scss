@@ -1,0 +1,38 @@
+.projects {
+    &-item {
+        position: relative;
+        display: inline-block;
+        margin: 0 0 30px 0;
+        overflow: hidden;
+        &:hover {
+            .projects-placeholder {
+                top: 0;
+            }
+        }
+    }
+    &-placeholder {
+        position: absolute;
+        top: -100%;
+        left: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(98, 98, 98, .5);
+        transition: .35s;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    &-header {
+        padding: 0 25%;
+        font-size: 24px;
+        color: $white;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &-img {
+        width: 100%;
+    }
+}

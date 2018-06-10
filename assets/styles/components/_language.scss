@@ -1,0 +1,16 @@
+.lang {
+    display: flex;
+    height: 65px;
+    text-transform: uppercase;
+    background-color: $orange;
+
+    align-items: center;
+    justify-content: center;
+    &-item {
+        margin: 2px;
+
+        &_active {
+            color: $white;
+        }
+    }
+}

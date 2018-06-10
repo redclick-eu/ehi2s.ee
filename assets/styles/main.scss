@@ -1,0 +1,24 @@
+@import "common/variables";
+@import "common/mixin";
+
+// Automatically injected Bower dependencies via wiredep (never manually edit this block)
+// bower:scss
+@import "../../bower_components/bootstrap/scss/bootstrap-grid.scss";
+@import "../../bower_components/bootstrap/scss/bootstrap-reboot.scss";
+@import "../../bower_components/bootstrap/scss/_carousel.scss";
+@import "../../bower_components/bootstrap/scss/_modal.scss";
+// endbower
+
+@import "common/fonts";
+@import "common/global";
+@import "components/search";
+@import "components/navBar";
+@import "components/carousel";
+@import "components/upBtn";
+@import "components/breadcrumbs";
+@import "components/map";
+@import "components/form";
+@import "components/language";
+@import "layouts/header";
+@import "layouts/footer";
+@import "layouts/pages";

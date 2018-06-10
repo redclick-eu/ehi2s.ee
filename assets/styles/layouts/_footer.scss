@@ -1,0 +1,96 @@
+.footer {
+    background: linear-gradient(to right, $white 0%, $white 51%, $gray 51%, $gray 100%);
+    background-color: $gray;
+    &-bg {
+        background-color: $white;
+
+        &::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 0;
+            height: 0;
+            border-bottom: 140px solid $gray;
+            border-left: 140px solid transparent;
+            content: "";
+        }
+    }
+
+    &-logo {
+        width: 65%;
+        padding-top: 10px;
+    }
+
+    &-info {
+        display: flex;
+        height: 140px;
+        background-color: $gray;
+
+        align-items: center;
+        justify-content: center;
+    }
+    .info {
+        &-item {
+            display: flex;
+            width: 200px;
+            height: 55px;
+            padding-left: 95px;
+            margin: 10px;
+            font-size: 14px;
+            color: $white;
+            background-repeat: no-repeat;
+            background-size: contain;
+
+            align-items: center;
+
+            &_phone {
+                background-image: url("../images/icons/phone-w.svg");
+            }
+            &_mail {
+                background-image: url("../images/icons/mail-w.svg");
+            }
+            &_adr {
+                width: 210px;
+                background-image: url("../images/icons/adr-w.svg");
+            }
+            &_fb {
+                width: 55px;
+                padding: 0;
+                margin: 10px 0 0 0 ;
+                background-image: url("../images/icons/fb-w.svg");
+            }
+        }
+    }
+
+    .copyright {
+        width: 100%;
+        padding: 20px 0;
+        font-size: 14px;
+        color: $white;
+        text-align: center;
+        background-color: $gray-dark;
+    }
+
+    @media (max-width: map-get($grid-breakpoints, xl)) {
+        background: linear-gradient(to right, $gray 0%, $gray 100%);
+    }
+    @media (max-width: map-get($grid-breakpoints, lg)) {
+        &-info {
+            height: auto;
+        }
+        .info-item {
+            max-width: 50%;
+            padding: 0 0 0 80px;
+            margin: 10px 0 10px 0;
+
+            flex: 0 0 50%;
+        }
+    }
+
+    @media (max-width: map-get($grid-breakpoints, sm)) {
+        .info-item {
+            max-width: 100%;
+            flex: 0 0 100%;
+        }
+    }
+}

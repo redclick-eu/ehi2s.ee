@@ -1,0 +1,37 @@
+.form {
+    &-input {
+        width: 100%;
+        padding: 10px 15px 10px 15px;
+        margin: 10px 0 10px 0;
+        border: 1px solid $gray;
+        border-radius: 3px;
+    }
+
+    &-textarea {
+        height: 150px;
+        resize: none;
+
+        @extend .form-input;
+    }
+
+    &-submit {
+        padding: 15px 35px 15px 35px;
+        color: $white;
+        text-transform: uppercase;
+        cursor: pointer;
+        background-color: $orange;
+        border: none;
+        border-radius: 5px;
+        transition: 0.15s;
+        &:hover {
+            background-color: darken($orange,5%);
+        }
+
+        &:active {
+            background-color: darken($orange,10%);
+        }
+    }
+    @media(max-width: map-get($grid-breakpoints, md)) {
+        padding: 0;
+    }
+}

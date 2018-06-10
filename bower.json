@@ -1,0 +1,23 @@
+{
+  "name": "sage",
+  "homepage": "https://roots.io/sage/",
+  "authors": [
+    "Ben Word <ben@benword.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.1.0"
+  },
+    "overrides": {
+    "bootstrap": {
+      "main": [
+        "./scss/bootstrap-grid.scss",
+        "./scss/bootstrap-reboot.scss",
+        "./scss/_carousel.scss",
+        "./scss/_modal.scss",
+        "./dist/js/bootstrap.bundle.js"
+      ]
+    }
+  }
+}
