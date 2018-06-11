@@ -79,7 +79,6 @@ input::placeholder, textarea::placeholder, input, textarea {
     padding: 0 5px 0 5px;
 }
 
-
 @media (max-width: map-get($grid-breakpoints, xl)) {
     h2.page-header {
         padding: 80px 0 0 0;
@@ -89,5 +88,11 @@ input::placeholder, textarea::placeholder, input, textarea {
 @media (max-width: map-get($grid-breakpoints, lg)) {
     body {
         margin-top: 85px;
+    }
+}
+
+@media (max-width: map-get($grid-breakpoints, sm)) {
+    .p-sm-0 {
+        padding: 0;
     }
 }

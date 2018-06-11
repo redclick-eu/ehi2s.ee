@@ -1,4 +1,4 @@
-<header class="container-fluid header">
+<header class="p-sm-0 container-fluid header">
     <div class="container d-none d-lg-block">
         <div class="row">
             <div class="col-4 header-bg ">
@@ -31,7 +31,7 @@
     </div>
     <div class="container d-block d-lg-none">
         <div class="row">
-            <div class="col-8  header-bg ">
+            <div class="p-sm-0 col-8  header-bg ">
                 <img src="<?= get_template_directory_uri(); ?>/dist/images/logo.png" alt="logo" class="header-logo header-logo_smallMenu">
             </div>
             <div class="col-2 p-5 d-flex align-items-center">
