@@ -1,4 +1,4 @@
-<div class="d-flex  align-items-center d-lg-none header_fullScreen collapse flex-column" id="navbar_top">
+<div class="d-flex d-lg-none header_fullScreen collapse flex-column" id="navbar_top">
     <div class="container">
         <div class="row">
             <div class="col-3 lang">
@@ -11,7 +11,7 @@
         </div>
     </div>
     <nav>
-        <ul class="d-flex flex-column justify-content-center ">
+        <ul class="d-flex flex-column">
             <li><a href="<?= home_url('/'); ?>">Главная</a></li>
             <li><a href="<?= home_url('/'); ?>">Услуги</a></li>
             <ul>
