@@ -58,15 +58,30 @@
             height: 30px;
             margin: 0;
             cursor: pointer;
-            background-repeat: no-repeat;
+            background: $gray no-repeat;
             background-size: contain;
             opacity: .8;
+            box-shadow: 2px 2px 11px 0 darken($gray-dark,20);
+            transition: 70ms;
+            &:hover {
+                box-shadow: 2px 2px 11px 0 darken($gray-dark,10);
+                background-color: darken($gray,5);
+            }
+
+            &:active {
+                box-shadow: 2px 2px 11px 0 $gray-dark;
+                background-color: darken($gray,10);
+            }
             &-prev {
                 background-image: url("../images/icons/arrow-l.svg");
             }
             &-next {
                 background-image: url("../images/icons/arrow-r.svg");
             }
+        }
+
+        &-img {
+            box-shadow: 3px 3px 11px -5px rgba(0,0,0,0.75);
         }
     }
     @media (max-width: map-get($grid-breakpoints, md)) {

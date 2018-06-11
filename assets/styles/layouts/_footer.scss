@@ -40,9 +40,10 @@
             color: $white;
             background-repeat: no-repeat;
             background-size: contain;
-
             align-items: center;
-
+            &_url:hover {
+                color: $orange;
+            }
             &_phone {
                 background-image: url("../images/icons/phone-w.svg");
             }
@@ -56,7 +57,7 @@
             &_fb {
                 width: 55px;
                 padding: 0;
-                margin: 10px 0 0 0 ;
+                margin: 10px 0 0 0;
                 background-image: url("../images/icons/fb-w.svg");
             }
         }
@@ -90,6 +91,7 @@
     @media (max-width: map-get($grid-breakpoints, sm)) {
         .info-item {
             max-width: 100%;
+
             flex: 0 0 100%;
         }
     }
