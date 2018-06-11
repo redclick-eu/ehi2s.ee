@@ -52,8 +52,20 @@ body.modal-open {
         &.show {
             height: 96vh !important;
         }
+        ul {
+            margin: 40px 0 0 0 ;
+        }
         li {
-            margin: 20px;
+
+            &+ul {
+                margin: 0;
+                li {
+                    margin: 5px;
+                    font-size: 20px;
+                    text-align: left;
+                }
+            }
+            margin: 10px;
             font-size: 30px;
             text-align: center;
             a {
