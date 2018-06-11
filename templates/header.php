@@ -2,7 +2,7 @@
     <div class="container d-none d-lg-block">
         <div class="row">
             <div class="col-4 header-bg ">
-                <img src="<?= get_template_directory_uri(); ?>/dist/images/logo-white.png" alt="logo" class="header-logo">
+                <a href="<?= home_url('/'); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/logo-white.png" alt="logo" class="header-logo"> </a>
             </div>
             <div class="col-8  header-info">
                 <div class="container">
