@@ -42,36 +42,30 @@
             endwhile;endif;
         $maxRows = count($photos); ?>
         <div class="carousel-inner carousel-inner_3" role="listbox">
-            <?php $isFirst = true;
-            for ($i = 0; $i < $maxRows; $i = $i + 3): ?>
-                <div class="carousel-item   <?= $isFirst ? "active" : "" ?>">
+            <?php for ($i = 0; $i < $maxRows; $i = $i + 3): ?>
+                <div class="justify-content-center carousel-item   <?= !$i ? "active" : "" ?>">
                     <img class="col-4 carousel-img" src="<?= $photos[$i]['src'] ?>"  alt="<?= $photos[$i]['alt'] ?>"  title="<?= $photos[$i]['title'] ?>">
-                    <img class="col-4 carousel-img" src="<?= $photos[$i+1]['src'] ?>"  alt="<?= $photos[$i+1]['alt'] ?>"  title="<?= $photos[$i+1]['title'] ?>">
-                    <img class="col-4 carousel-img" src="<?= $photos[$i+2]['src'] ?>"  alt="<?= $photos[$i+2]['alt'] ?>"  title="<?= $photos[$i+2]['title'] ?>">
+                    <?php if ($photos[$i+1]): ?><img class="col-4 carousel-img" src="<?= $photos[$i+1]['src'] ?>"  alt="<?= $photos[$i+1]['alt'] ?>"  title="<?= $photos[$i+1]['title'] ?>"><?php endif; ?>
+                    <?php if ($photos[$i+2]): ?><img class="col-4 carousel-img" src="<?= $photos[$i+2]['src'] ?>"  alt="<?= $photos[$i+2]['alt'] ?>"  title="<?= $photos[$i+2]['title'] ?>"><?php endif; ?>
                 </div>
-                <?php $isFirst = false;
-            endfor; ?>
+                <?php  endfor; ?>
         </div>
 
         <div class="carousel-inner carousel-inner_2" role="listbox">
-            <?php $isFirst = true;
-            for ($i = 0; $i < $maxRows; $i = $i + 2): ?>
-                <div class="carousel-item   <?= $isFirst ? "active" : "" ?>">
+            <?php for ($i = 0; $i < $maxRows; $i = $i + 2): ?>
+                <div class="justify-content-center carousel-item   <?= !$i ? "active" : "" ?>">
                     <img class="col-6 carousel-img" src="<?= $photos[$i]['src'] ?>"  alt="<?= $photos[$i]['alt'] ?>"  title="<?= $photos[$i]['title'] ?>">
-                    <img class="col-6 carousel-img" src="<?= $photos[$i+1]['src'] ?>"  alt="<?= $photos[$i+1]['alt'] ?>"  title="<?= $photos[$i+1]['title'] ?>">
+                    <?php if ($photos[$i+1]): ?> <img class="col-6 carousel-img" src="<?= $photos[$i+1]['src'] ?>"  alt="<?= $photos[$i+1]['alt'] ?>"  title="<?= $photos[$i+1]['title'] ?>"><?php endif; ?>
                 </div>
-                <?php $isFirst = false;
-            endfor; ?>
+                <?php endfor; ?>
         </div>
 
         <div class="carousel-inner carousel-inner_1" role="listbox">
-            <?php $isFirst = true;
-            for ($i = 0; $i < $maxRows; $i = $i + 1): ?>
-                <div class="carousel-item   <?= $isFirst ? "active" : "" ?>">
+            <?php for ($i = 0; $i < $maxRows; $i = $i + 1): ?>
+                <div class="justify-content-center carousel-item   <?= !$i ? "active" : "" ?>">
                     <img class="col-12 carousel-img" src="<?= $photos[$i]['src'] ?>"  alt="<?= $photos[$i]['alt'] ?>"  title="<?= $photos[$i]['title'] ?>">
                 </div>
-                <?php $isFirst = false;
-            endfor; ?>
+                <?php  endfor; ?>
         </div>
 
     </div>
