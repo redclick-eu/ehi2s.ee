@@ -7,10 +7,17 @@
     align-items: center;
     justify-content: center;
     &-item {
-        margin: 2px;
+        margin: 4px;
 
+        &:hover {
+            color: $white;
+        }
         &_active {
             color: $white;
+
+            &:hover {
+                color: $gray-text;
+            }
         }
     }
 }
