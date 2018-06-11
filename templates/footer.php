@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-4 d-none d-xl-block footer-bg ">
-                <img src="<?= get_template_directory_uri(); ?>/dist/images/logo.png" alt="logo" class="footer-logo">
+                <a href="<?= home_url('/'); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/logo.png" alt="logo" class="footer-logo"></a>
             </div>
             <div class="col-12 col-xl-8  footer-info">
                 <div class="container">
