@@ -10,17 +10,18 @@
                         <?php $page = new WP_Query(['pagename' => 'mainpage']);
                         $page->the_post();?>
 
-                        <div class="col-6 col-xl-3 info-item info-item_phone">
+                        <a href="tel:<?= get_field('i_phone_url');?>" class="col-6 col-xl-3 info-item info-item_phone">
                             <span class="info-text"><?= get_field('i_phone');?></span>
-                        </div>
-                        <div class="col-6 col-xl-3 info-item info-item_mail">
+                        </a>
+                        <a  href="mailto:<?= get_field('i_mail'); ?>" class="col-6 col-xl-3 info-item info-item_mail">
                             <span class="info-text"><?= get_field('i_mail');?></span>
-                        </div>
+                        </a>
                         <div class="col-6 col-xl-5 info-item info-item_adr">
                             <span class="info-text"><?= get_field('i_adress');?></span>
                         </div>
-                        <?php wp_reset_postdata(); ?>
-                        <div class="col-6 col-xl-1 info-item info-item_fb"></div>
+
+                        <a  href="<?= get_field('i_fb'); ?>" class="col-6 col-xl-1 info-item info-item_fb"></a>
+                            <?php wp_reset_postdata(); ?>
                     </div>
                 </div>
             </div>

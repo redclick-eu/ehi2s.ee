@@ -9,16 +9,16 @@
                     <div class="row justify-content-center">
                         <?php $page = new WP_Query(['pagename' => 'mainpage']);
                         $page->the_post(); ?>
-                        <div class="info-item info-item_phone">
+                        <a  href="tel:<?= get_field('i_phone_url');?>" class="info-item info-item_url info-item_phone">
                             <span class="info-text"><?= get_field('i_phone'); ?></span>
-                        </div>
-                        <div class="info-item info-item_mail">
+                        </a>
+                        <a href="mailto:<?= get_field('i_mail'); ?>" class="info-item info-item_url info-item_mail">
                             <span class="info-text"><?= get_field('i_mail'); ?></span>
-                        </div>
+                        </a>
                         <div class="info-item info-item_adr">
                             <span class="info-text"><?= get_field('i_adress'); ?></span>
                         </div>
-                        <div class="info-item info-item_fb"></div>
+                        <a  href="<?= get_field('i_fb'); ?>" class="info-item info-item_url info-item_fb"></a>
                     </div>
                 </div>
             </div>
