@@ -1,9 +1,14 @@
 body.modal-open {
     .header {
-        padding-right: 17px;
+        padding-right: 32px; //17px + 15px
     }
     .header_fullScreen {
         padding-right: 0 !important;
+    }
+    @media (max-width: map-get($grid-breakpoints, sm)) {
+        .header {
+            padding-right: 17px; // 17px
+        }
     }
 }
 
