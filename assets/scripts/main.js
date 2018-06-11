@@ -74,6 +74,10 @@
                     }).resize();
 
                 }
+                $('#navbar_top').on('shown.bs.modal', function (e) {
+                    $('.modal-backdrop').remove();
+                });
+
                 var $up = $('#up');
                 if ($up.length) {
                     $up.on('click', function () {
