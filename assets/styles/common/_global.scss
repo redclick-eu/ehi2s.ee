@@ -52,7 +52,7 @@ h2.page-header {
     }
 }
 
-body.post-template {
+body {
     display: flex; //footer at bottom 1
     min-height: 100vh; //footer at bottom 2
     color: $gray-text;
@@ -87,7 +87,7 @@ input::placeholder, textarea::placeholder, input, textarea {
 }
 
 @media (max-width: map-get($grid-breakpoints, lg)) {
-    body.post-template {
+    body {
         margin-top: 85px;
     }
 }
