@@ -3,7 +3,21 @@
 
     &-item {
         background-color: $white;
+        display: block;
         box-shadow: 3px 3px 11px -5px rgba(0,0,0,0.75);
+        transition: 0.2s;
+        &:hover {
+            color:inherit;
+            box-shadow: 3px 3px 11px -5px rgba(0,0,0,0.45);
+            .services-icon  {
+                transform: scale(1.1);
+            }
+        }
+
+        &:active {
+            transition: 0s;
+            box-shadow: 3px 3px 11px -5px rgba(0,0,0,0.1);
+        }
     }
     &-photo {
         width: 100%;
@@ -25,6 +39,7 @@
         background-size: 202px 46px;
         border-radius: 50%;
         box-shadow: 0 9px 40px -12px rgba(0, 0, 0, .75);
+        transition: 0.5s;
         &_1 {
             background-position: -65px 17px;
         }
