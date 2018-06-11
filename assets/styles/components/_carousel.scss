@@ -79,10 +79,6 @@
                 background-image: url("../images/icons/arrow-r.svg");
             }
         }
-
-        &-img {
-            box-shadow: 3px 3px 11px -5px rgba(0,0,0,0.75);
-        }
     }
     @media (max-width: map-get($grid-breakpoints, md)) {
         .carousel-controls {
