@@ -34,15 +34,16 @@
             display: flex;
             width: 200px;
             height: 55px;
-            padding-left: 95px;
+            padding-left: 65px;
             margin: 10px;
             font-size: 14px;
             color: $white;
             background-repeat: no-repeat;
             background-size: contain;
             align-items: center;
-            &_url:hover {
-                color: $orange;
+            &:hover {
+                background-color: $orange;
+                border-radius: 30px;
             }
             &_phone {
                 background-image: url("../images/icons/phone-w.svg");

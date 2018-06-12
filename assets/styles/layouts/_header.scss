@@ -87,14 +87,18 @@ body.modal-open {
     .info {
         &-item {
             display: flex;
-            height: 45px;
-            padding: 0 0 0 65px;
+            width: 200px;
+            height: 55px;
+            padding-left: 65px;
+            margin: 10px;
             font-size: 14px;
             background-repeat: no-repeat;
             background-size: contain;
-
             align-items: center;
-
+            &:hover {
+                background-color: $gray-light;
+                border-radius: 30px;
+            }
             &_phone {
                 background-image: url("../images/icons/phone-y.svg");
             }
@@ -102,10 +106,13 @@ body.modal-open {
                 background-image: url("../images/icons/mail-y.svg");
             }
             &_adr {
+                width: 210px;
                 background-image: url("../images/icons/adr-y.svg");
             }
             &_fb {
+                width: 55px;
                 padding: 0;
+                margin: 10px 0 0 0;
                 background-image: url("../images/icons/fb-y.svg");
             }
         }
