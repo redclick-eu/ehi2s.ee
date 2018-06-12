@@ -1,7 +1,4 @@
-<?php get_template_part('templates/page', 'header'); ?>
-
-<div class="alert alert-warning">
-  <?php _e('Sorry, but the page you were trying to view does not exist.', 'sage'); ?>
+<div class="container e404">
+    <h2 class="page-header">ОШИБКА 404</h2>
+    <p class="e404-text">Страница не найдена</p>
 </div>
-
-<?php get_search_form(); ?>
