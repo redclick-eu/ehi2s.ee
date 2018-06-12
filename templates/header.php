@@ -33,10 +33,10 @@
     <div class="container d-block d-lg-none">
         <div class="row">
             <div class="p-sm-0 col-8  header-bg ">
-                <img src="<?= get_template_directory_uri(); ?>/dist/images/logo.png" alt="logo" class="header-logo header-logo_smallMenu">
+                <a href="<?= home_url('/'); ?>"><img src="<?= get_template_directory_uri(); ?>/dist/images/logo.png" alt="logo" class="header-logo header-logo_smallMenu"></a>
             </div>
             <div class="col-2 p-5 d-flex align-items-center">
-                <a class="header-btn header-btn_phone" href="#"></a>
+                <a class="header-btn header-btn_phone" href="tel:<?= get_field('i_phone_url');?>"></a>
             </div>
             <div class="col-2 d-flex p-5 align-items-center">
                 <div class="header-btn header-btn_menu" data-toggle="modal" data-target="#navbar_top"></div>

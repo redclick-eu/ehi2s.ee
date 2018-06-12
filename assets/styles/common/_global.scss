@@ -87,9 +87,9 @@ input::placeholder, textarea::placeholder, input, textarea {
 
 @media (max-width: map-get($grid-breakpoints, lg)) {
     body {
-        margin-top: 85px;
+        padding-top: 85px;
         &.logged-in {
-            margin-top: 135px;
+            padding-top: 135px;
 
             .header {
                 top: 50px;
