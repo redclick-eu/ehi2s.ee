@@ -20,7 +20,9 @@
 
             &:hover {
                 .menu_sub {
-                    display: block !important;
+                    opacity: 1;
+                    pointer-events: auto;
+                    height: 100%;
                 }
             }
         }
@@ -32,11 +34,13 @@
         }
         &_sub {
             position: absolute;
+            display: block;
             top: 100%;
             left: 50%;
-            display: none;
+            opacity: 0;
+            pointer-events: none;
             transform: translate(-50%, 0);
-
+            transition: .2s;
             &-item {
                 width: 200px;
                 padding: 20px 30px;
