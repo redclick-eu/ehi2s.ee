@@ -6,19 +6,22 @@
             </div>
             <div class="col-8  header-info">
                 <div class="container">
-                    <div class="row justify-content-center">
+                    <div class="row">
                         <?php $page = new WP_Query(['pagename' => 'mainpage']);
-                        $page->the_post(); ?>
-                        <a  href="tel:<?= get_field('i_phone_url');?>" class="info-item info-item_phone">
-                            <span class="info-text"><?= get_field('i_phone'); ?></span>
+                        $page->the_post();?>
+
+                        <a href="tel:<?= get_field('i_phone_url');?>" class="col-6 col-xl-3 info-item info-item_phone">
+                            <span class="info-text"><?= get_field('i_phone');?></span>
                         </a>
-                        <a href="mailto:<?= get_field('i_mail'); ?>" class="info-item info-item_mail">
-                            <span class="info-text"><?= get_field('i_mail'); ?></span>
+                        <a  href="mailto:<?= get_field('i_mail'); ?>" class="col-6 col-xl-3 info-item info-item_mail">
+                            <span class="info-text"><?= get_field('i_mail');?></span>
                         </a>
-                        <a href="<?= home_url('/'); ?>#map" class="info-item info-item_adr">
-                            <span class="info-text"><?= get_field('i_adress'); ?></span>
+                        <a href="<?= home_url('/'); ?>" class="col-6 col-xl-5 info-item info-item_adr">
+                            <span class="info-text"><?= get_field('i_adress');?></span>
                         </a>
-                        <a  href="<?= get_field('i_fb'); ?>" class="info-item info-item_fb"></a>
+
+                        <a  href="<?= get_field('i_fb'); ?>" class="col-6 col-xl-1 info-item info-item_fb"></a>
+                            <?php wp_reset_postdata(); ?>
                     </div>
                 </div>
             </div>
