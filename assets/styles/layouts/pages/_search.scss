@@ -1,0 +1,21 @@
+.searchPage {
+    &-line {
+        border-bottom: 1px solid $gray;
+        padding: 0 0 10px 0;
+        margin: 0 0 10px 0;
+    }
+    &-url {
+        text-transform: uppercase;
+        font-family: 'roboto-bold', sans-serif;
+        transition: .15s;
+        &::before {
+            content: '';
+            display: inline-block;
+            margin: 0 10px 0 0;
+            width: 10px;
+            height: 10px;
+            background-color: $gray;
+            border-radius: 50%;
+        }
+    }
+}

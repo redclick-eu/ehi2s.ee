@@ -1,1 +1,1 @@
-<h2 class="page-header"><?php echo get_the_title()?></h2>
+<h2 class="page-header"><?= get_the_title()?></h2>
