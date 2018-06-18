@@ -70,6 +70,7 @@ main {
     height: inherit !important;
     min-height: inherit !important;
     max-height: inherit !important;
+    padding: 0 !important;
 }
 
 input::placeholder, textarea::placeholder, input, textarea {
