@@ -66,6 +66,12 @@ main {
     width: 100%;
 }
 
+#tinymce {
+    height: inherit !important;
+    min-height: inherit !important;
+    max-height: inherit !important;
+}
+
 input::placeholder, textarea::placeholder, input, textarea {
     font-size: 14px;
     color: $gray;
