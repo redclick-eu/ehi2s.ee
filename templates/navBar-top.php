@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-3 lang">
-                <span class="lang-item lang-item_est lang-item_active"> est </span> <span class="lang-item lang-item_slash">/</span> <span class="lang-item lang-item_ru"> ru </span>
+                <?php get_template_part('templates/lang') ?>
             </div>
             <div class="col-9 search">
                 <?php get_template_part('templates/search'); ?>

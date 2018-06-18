@@ -19,7 +19,7 @@
             <?php get_template_part('templates/search'); ?>
         </div>
         <div class="col-2 lang">
-            <a href="<?= home_url('/'); ?>" class="lang-item lang-item_est lang-item_active"> est </a> <span>/</span> <a href="<?= home_url('/'); ?>" class="lang-item lang-item_ru"> ru </a>
+            <?php get_template_part('templates/lang') ?>
         </div>
     </div>
 </div>

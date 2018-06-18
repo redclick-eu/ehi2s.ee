@@ -14,7 +14,7 @@
         }
         &_active {
             color: $white;
-
+            cursor: pointer;
             &:hover {
                 color: $gray-text;
             }
