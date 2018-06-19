@@ -8,9 +8,8 @@ a:hover {
     color: $orange;
 }
 
-
 button, //сброс стилей
-button:active, button:focus, button:hover, input, input:active, input:focus, input:hover,textarea, textarea:active, textarea:focus, textarea:hover {
+button:active, button:focus, button:hover, input, input:active, input:focus, input:hover, textarea, textarea:active, textarea:focus, textarea:hover {
     outline: 0;
     outline-offset: 0;
     box-shadow: none;
@@ -70,18 +69,27 @@ input::placeholder, textarea::placeholder, input, textarea {
 @media (max-width: map-get($grid-breakpoints, lg)) {
     body {
         padding-top: 85px;
-        &.logged-in {
-            padding-top: 135px;
-
-            .header {
-                top: 50px;
-            }
+        &.logged-in .header {
+            top: 32px;
         }
+    }
+}
+
+@media (max-width:  782px) {
+    body.logged-in .header {
+        top: 46px;
     }
 }
 
 @media (max-width: map-get($grid-breakpoints, sm)) {
     .p-sm-0 {
         padding: 0;
+    }
+}
+
+// Fix #wpadminbar
+@media screen and (max-width: 600px) {
+    #wpadminbar {
+        position: fixed;
     }
 }
