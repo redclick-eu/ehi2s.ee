@@ -60,12 +60,6 @@ input::placeholder, textarea::placeholder, input, textarea {
     padding: 0 5px 0 5px;
 }
 
-@media (max-width: map-get($grid-breakpoints, xl)) {
-    h2.page-header {
-        padding: 80px 0 0 0;
-    }
-}
-
 @media (max-width: map-get($grid-breakpoints, lg)) {
     body {
         padding-top: 85px;
