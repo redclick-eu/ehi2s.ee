@@ -10,18 +10,24 @@
 
         </div>
         <nav class="row">
-            <ul class="d-flex flex-column">
-                <li><a href="<?= home_url('/'); ?>">Главная</a></li>
-                <li><a href="<?= home_url('/'); ?>">Услуги</a></li>
-                <ul>
-                    <li> <a href="<?= home_url('/'); ?>">Бетонные полы</a></li>
-                    <li><a href="<?= home_url('/'); ?>">Фундамент</a></li>
-                    <li><a href="<?= home_url('/'); ?>">Общестроительные работы</a></li>
-                </ul>
-                <li><a href="<?= home_url('/'); ?>">Проекты</a></li>
-                <li><a href="<?= home_url('/'); ?>">О нас</a></li>
-                <li><a href="<?= home_url('/'); ?>">Контакты</a></li>
-            </ul>
+            <?php
+            wp_nav_menu( array(
+                'menu_class'=>'d-flex flex-column',
+                'theme_location'=>'primary_navigation',
+            ) );
+            ?>
+<!--            <ul class="d-flex flex-column">-->
+<!--                <li><a href="--><?//= home_url('/'); ?><!--">Главная</a></li>-->
+<!--                <li><a href="--><?//= home_url('/'); ?><!--">Услуги</a></li>-->
+<!--                <ul>-->
+<!--                    <li> <a href="--><?//= home_url('/'); ?><!--">Бетонные полы</a></li>-->
+<!--                    <li><a href="--><?//= home_url('/'); ?><!--">Фундамент</a></li>-->
+<!--                    <li><a href="--><?//= home_url('/'); ?><!--">Общестроительные работы</a></li>-->
+<!--                </ul>-->
+<!--                <li><a href="--><?//= home_url('/'); ?><!--">Проекты</a></li>-->
+<!--                <li><a href="--><?//= home_url('/'); ?><!--">О нас</a></li>-->
+<!--                <li><a href="--><?//= home_url('/'); ?><!--">Контакты</a></li>-->
+<!--            </ul>-->
         </nav>
     </div>
 </div>

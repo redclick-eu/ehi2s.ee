@@ -58,7 +58,7 @@ body.modal-open {
         }
         li {
 
-            &+ul {
+            > ul {
                 margin: 0;
                 list-style-type: square;
                 li {

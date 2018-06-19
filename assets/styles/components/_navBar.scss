@@ -19,7 +19,7 @@
             align-items: center;
 
             &:hover {
-                .menu_sub {
+                .sub-menu {
                     opacity: 1;
                     pointer-events: auto;
                     height: 100%;
@@ -32,7 +32,7 @@
             vertical-align: middle;
             cursor: pointer;
         }
-        &_sub {
+        .sub-menu {
             position: absolute;
             display: block;
             top: 100%;
@@ -41,13 +41,16 @@
             pointer-events: none;
             transform: translate(-50%, 0);
             transition: .2s;
-            &-item {
+            .menu-item {
                 width: 200px;
                 padding: 20px 30px;
                 margin-bottom: 1px;
                 color: $gray-text;
                 text-align: center;
                 background-color: $white;
+                a {
+                    width: 100%;
+                }
             }
         }
     }
