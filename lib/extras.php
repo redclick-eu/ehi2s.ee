@@ -44,15 +44,14 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 */
 function breadcrumbs()
 {
-    $text['home'] = 'Главная';
+    $text['home'] = apply_filters('tr',2,0);
     $text['category'] = '%s';
-    $text['search'] = 'Результаты поиска по запросу "%s"';
-    $text['tag'] = 'Записи с тегом "%s"';
-    $text['author'] = 'Статьи автора %s';
-    $text['404'] = 'Ошибка 404';
+    $text['search'] = apply_filters('tr',3,0);
+    $text['tag'] = apply_filters('tr',4,0).'"%s"';
+    $text['author'] = apply_filters('tr',5,0).'%s';
+    $text['404'] = apply_filters('tr',6,0);
     $text['page'] = '%s';
-    $text['cpage'] = 'Страница комментариев %s';
-
+    $text['cpage'] = apply_filters('tr',7,0).'%s';
     $wrap_before = '<div class="row breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">';
     $wrap_after = '</div>';
     $sep = ' / ';
@@ -266,3 +265,4 @@ function my_searchwp_live_search_configs($configs)
 }
 
 add_filter('searchwp_live_search_configs', __NAMESPACE__ . '\\my_searchwp_live_search_configs');
+
