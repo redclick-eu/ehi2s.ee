@@ -6,7 +6,7 @@ Template Name: Search Page
 
 
 <div class=" container searchPage">
-    <h2 class="page-header">поиск</h2>
+    <h2 class="page-header"><?php apply_filters('tr','поиск',1); ?></h2>
     <div class="row">
         <? if (have_posts()) :
             while (have_posts()) : the_post();
@@ -18,7 +18,7 @@ Template Name: Search Page
                 endwhile; ?>
         <?php
         else :
-            echo "Извините по Вашему результату ничего не найдено";
+            apply_filters('tr','Извините, по Вашему результату ничего не найдено',1);
         endif; ?>
     </div>
 </div>

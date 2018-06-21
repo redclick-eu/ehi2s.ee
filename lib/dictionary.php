@@ -13,6 +13,10 @@ function tr($str, $echo)
         'Статьи автора' => 'Autor artiklid',
         'Ошибка 404' => 'viga 404',
         'Страница комментариев' => 'Kommentaari lehekülg',
+        'проекты' => 'projektid',
+        'Страница не найдена' => 'Lehte ei leitud',
+        'поиск' => 'otsi',
+        'Извините, по Вашему результату ничего не найдено' => 'Vabandame teie tulemuse eest: midagi ei leitud'
     );
     if(ICL_LANGUAGE_CODE === 'et') {
         if(isset($dictionary[$str])) {
@@ -26,5 +30,5 @@ function tr($str, $echo)
     }
     return $str;
 }
-
+// apply_filters('tr',str,boolean)
 add_filter('tr', __NAMESPACE__ . '\\tr',10,2);

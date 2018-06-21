@@ -23,7 +23,7 @@
 <?php endif; ?>
 <?php get_template_part('templates/services'); ?>
 <div class="container-fluid  projectCarousel">
-    <h2 class="page-header  page-header_white">проекты</h2>
+    <h2 class="page-header  page-header_white"><?php apply_filters('tr','проекты',1) ?></h2>
     <div class=" carousel slide container" id="projectCarousel" data-ride="carousel">
         <div class="carousel-controls">
             <a class="carousel-control carousel-control-prev" data-slide="prev" href="#projectCarousel"></a>
