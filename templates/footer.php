@@ -18,7 +18,7 @@
                         <a href="<?= home_url('/'); ?>#map" class="info-item info-item_adr">
                             <span class="info-text"><?= get_field('i_adress'); ?></span>
                         </a>
-                        <a  href="<?= get_field('i_fb'); ?>" class="info-item info-item_fb"><span class="d-lg-none"><?= get_field('i_fb'); ?></span></a>
+                        <a  href="<?= get_field('i_fb'); ?>" class="info-item info-item_fb"><span class="d-lg-none">facebook.com</span></a>
                     </div>
                 </div>
             </div>

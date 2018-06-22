@@ -16,7 +16,11 @@ function tr($str, $echo)
         'проекты' => 'projektid',
         'Страница не найдена' => 'Lehte ei leitud',
         'поиск' => 'otsi',
-        'Извините, по Вашему результату ничего не найдено' => 'Vabandame teie tulemuse eest: midagi ei leitud'
+        'Извините, по Вашему результату ничего не найдено' => 'meie kontaktid',
+        'наши контакты' => 'meie kontaktid',
+        'Адрес' => 'Aadress',
+        'Телефон' => 'Telefoninumber',
+
     );
     if(ICL_LANGUAGE_CODE === 'et') {
         if(isset($dictionary[$str])) {
