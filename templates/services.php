@@ -1,5 +1,5 @@
 <div class=" container services">
-    <h2 class="page-header">Услуги</h2>
+    <h2 class="page-header"><?php apply_filters('tr','Услуги',1) ?> </h2>
     <div class="row">
         <?php
         $args = [

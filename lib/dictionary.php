@@ -20,6 +20,7 @@ function tr($str, $echo)
         'наши контакты' => 'meie kontaktid',
         'Адрес' => 'Aadress',
         'Телефон' => 'Telefoninumber',
+        'Услуги' => 'Teenused',
 
     );
     if(ICL_LANGUAGE_CODE === 'et') {
