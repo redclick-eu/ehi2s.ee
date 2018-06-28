@@ -44,14 +44,14 @@ add_filter('excerpt_more', __NAMESPACE__ . '\\excerpt_more');
 */
 function breadcrumbs()
 {
-    $text['home'] = apply_filters('tr','Главная',0);
-    $text['category'] = '%s';
-    $text['search'] = apply_filters('tr','Результаты поиска по запросу',0);
-    $text['tag'] = apply_filters('tr','Записи с тегом',0).'"%s"';
-    $text['author'] = apply_filters('tr','Статьи автора',0).'%s';
-    $text['404'] = apply_filters('tr','Ошибка 404',0);
+    $text['home'] = rc_t('Главная',0);
+    $text['category'] = '%s';//rc_t('
+    $text['search'] = rc_t('Результаты поиска по запросу',0);
+    $text['tag'] = rc_t('Записи с тегом',0).'"%s"';
+    $text['author'] = rc_t('Статьи автора',0).'%s';
+    $text['404'] = rc_t('Ошибка 404',0);
     $text['page'] = '%s';
-    $text['cpage'] = apply_filters('tr','Страница комментариев',0).'%s';
+    $text['cpage'] = rc_t('Страница комментариев',0).'%s';
     $wrap_before = '<div class="row breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">';
     $wrap_after = '</div>';
     $sep = ' / ';

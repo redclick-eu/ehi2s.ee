@@ -10,7 +10,6 @@
  * @link https://github.com/roots/sage/pull/1042
  */
 $sage_includes = [
-  'lib/dictionary.php', // Theme ru/est dictionary
   'lib/assets.php',    // Scripts and stylesheets
   'lib/extras.php',    // Custom functions
   'lib/setup.php',     // Theme setup
