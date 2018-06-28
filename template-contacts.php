@@ -27,12 +27,12 @@
                 <form action="" class="container form">
                     <div class="row">
                         <div class="col-12 col-sm-6">
-                            <input type="text" class="form-input" placeholder="Имя*">
+                            <input type="text" class="form-input" placeholder="<?php rc_t('Имя',1) ?>*">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 col-sm-6">
-                            <input type="text" class="form-input" placeholder="Телефон*">
+                            <input type="text" class="form-input" placeholder="<?php rc_t('Телефон',1) ?>*">
                         </div>
                         <div class="col-12 col-sm-6">
                             <input type="text" class="form-input" placeholder="Email*">
@@ -40,12 +40,12 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <textarea class="form-textarea" placeholder="Сообщение*"></textarea>
+                            <textarea class="form-textarea" placeholder="<?php rc_t('Сообщение',1) ?>*"></textarea>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-4 offset-8 d-flex justify-content-end">
-                            <input type="submit" class="form-submit">
+                            <input type="submit" class="form-submit" value="<?php rc_t('Отправить',1) ?>">
                         </div>
                     </div>
                 </form>
