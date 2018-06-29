@@ -25,7 +25,7 @@
                         </a>
 
                         <a  href="<?= get_field('i_fb'); ?>" class="col-6 col-xl-1 info-item info-item_fb">
-                            <span class="d-xl-none"><?= get_field('i_fb'); ?></span>
+                            <span class="d-xl-none">facebook.com</span>
                         </a>
                             <?php wp_reset_postdata(); ?>
                     </div>
