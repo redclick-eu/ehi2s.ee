@@ -4,6 +4,10 @@
     align-items: center;
     justify-content: flex-end;
 }
+
+.header_fullScreen .search-form {
+    margin-bottom: 0;
+}
 .search-form {
 
     input[type="text"] {
