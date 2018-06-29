@@ -2,6 +2,7 @@
   "dependencies": {
     "main.js": {
       "files": [
+        "scripts/current-device.min.js",
         "scripts/main.js"
       ],
       "bower": [

@@ -94,8 +94,11 @@
                         }
                     });
                 }
-
-
+                var isMobileDevice = device.mobile() || device.tablet();
+                var googleMaps = 'https://www.google.com/maps/search/?api=1&query=59.450178,24.710124';
+                if(isMobileDevice) {
+                    $('.js-contacts').attr('href',googleMaps);
+                }
             },
             finalize: function () {
                 // JavaScript to be fired on all pages, after page specific JS is fired
