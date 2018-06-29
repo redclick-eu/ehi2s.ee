@@ -18,24 +18,20 @@
         // All pages
         'common': {
             init: function () {
-                // wp_enqueue_script('sage/google-maps', "", ['jquery','sage/js'], null, true);
                 var $search = $('.search-form');
-                var $cross = $search.find('.cross');
-                var canOpen = true;
-                var changeFormState = function changeFormState() {
-                    if (!$search.hasClass('open') && canOpen) {
-                        var input = $('input');
-                        $search.toggleClass('open');
-                        input.focus();
+                var $searchInput = $('input',$search);
+                var formValue = '';
+                $search.on('mouseover', function () {
+                    if (!$search.hasClass('open')) {
+                        $search.addClass('open');
+                        $('input').val(formValue);
                     }
-                };
-                $search.on('mouseover', changeFormState);
-                $cross.on('click', function () {
-                    $search.toggleClass('open');
-                    canOpen = false;
-                    setTimeout(function () {
-                        canOpen = true;
-                    }, 750)
+                });
+                $searchInput.on('focusout', function () {
+                    $search.removeClass('open');
+                    formValue = $searchInput.val();
+                    $searchInput.val('Поиск...').blur();
+                    $('body').click(); // Close live search plugin
                 });
 
                 var $photoCarousel = $('#photoCarousel');
