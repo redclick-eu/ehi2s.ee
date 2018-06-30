@@ -23,7 +23,7 @@
                         <a href="<?= $contactsUrl ?>" class="info-item info-item_adr js-contacts">
                             <span class="info-text"><?= get_field('i_adress'); ?></span>
                         </a>
-                        <a  href="<?= get_field('i_fb'); ?>" class="info-item info-item_fb"><span class="d-lg-none">facebook.com</span></a>
+                        <a  href="<?= get_field('i_fb'); ?>" target="_blank" class="info-item info-item_fb"><span class="d-lg-none">facebook.com</span></a>
                     </div>
                 </div>
             </div>
