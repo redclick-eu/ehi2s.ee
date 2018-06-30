@@ -35,7 +35,7 @@
                             <input type="text" class="form-input" placeholder="<?php rc_t('Телефон',1) ?>*">
                         </div>
                         <div class="col-12 col-sm-6">
-                            <input type="text" class="form-input" placeholder="Email*">
+                            <input type="text" class="form-input" placeholder="<?php rc_t('E-mail',1) ?>*">
                         </div>
                     </div>
                     <div class="row">
