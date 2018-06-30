@@ -301,6 +301,5 @@ function sendMail_callback(){
     ';
     $headers = "Content-type: text/html; charset=utf-8\r\n";
     $headers .= 'Reply-To: ' . $_POST['mail'] . "\r\n";;
-    echo $message;
     wp_mail($to, $subject, $message,$headers);
 };
