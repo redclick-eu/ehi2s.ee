@@ -3,7 +3,7 @@
 namespace Roots\Sage\Extras;
 
 use Roots\Sage\Setup;
-
+use WP_Query;
 /**
  * Add <body> classes
  */
@@ -266,3 +266,41 @@ function my_searchwp_live_search_configs($configs)
 
 add_filter('searchwp_live_search_configs', __NAMESPACE__ . '\\my_searchwp_live_search_configs');
 
+add_action( 'wp_ajax_sendMail',        __NAMESPACE__ . '\\sendMail_callback' ); // For logged in users
+add_action( 'wp_ajax_nopriv_sendMail', __NAMESPACE__ . '\\sendMail_callback' ); // For anonymous users
+
+if (isset($_POST['smb'])) {sendMail_callback();}; //Offline start
+function sendMail_callback(){
+    $page = new WP_Query(['pagename' => 'mainpage']);
+    $page->the_post();
+    $to =  get_field('i_mail');
+    $subject= 'Сообщение '.$_POST['id'].' от '.$_POST['name'];
+    $message = '
+    <table>     
+      <tr>
+        <td>Имя</td>
+        <td>'.$_POST['name'].'</td>
+      </tr>
+      <tr>
+        <td>E-mail</td>
+        <td>'.$_POST['mail'].'</td>
+      </tr>
+      <tr>
+        <td>Телефон</td>
+        <td>'.$_POST['phone'].'</td>
+      </tr>
+       <tr>
+        <td>Источник </td>
+        <td><a href="'.$_POST['pageUrl'].'">'.$_POST['pageName'].'</a></td>
+      </tr>
+      <tr>
+        <td>Сообщение</td>
+        <td>'.$_POST['text'].'</td>
+      </tr>
+    </table>
+    ';
+    $headers = "Content-type: text/html; charset=utf-8\r\n";
+    $headers .= 'Reply-To: ' . $_POST['mail'] . "\r\n";;
+    echo $message;
+    wp_mail($to, $subject, $message,$headers);
+};
