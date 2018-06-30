@@ -26,11 +26,3 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
-
-add_filter( 'old_slug_redirect_url', function ( $link ) {
-  if ( $link === get_the_permalink() ) {
-    return '';
-  };
-
-  return $link;
-} );
