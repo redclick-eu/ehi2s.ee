@@ -20,17 +20,12 @@
             init: function () {
                 var $search = $('.search-form');
                 var $searchInput = $('input',$search);
-                var formValue = '';
-                $search.on('mouseover', function () {
-                    if (!$search.hasClass('open')) {
-                        $search.addClass('open');
-                        $('input').val(formValue);
-                    }
+                $searchInput.on('focusin', function () {
+                    $search.addClass('open');
                 });
                 $searchInput.on('focusout', function () {
                     $search.removeClass('open');
-                    formValue = $searchInput.val();
-                    $searchInput.val('Поиск...').blur();
+                    $searchInput.blur();
                     $('body').click(); // Close live search plugin
                 });
 
@@ -61,11 +56,11 @@
                             this.remove();
                         });
                         if(w>=1200) {
-                            $projectCarousel.append($inners[0])
+                            $projectCarousel.append($inners[0]);
                         }else if(w>=768) {
-                            $projectCarousel.append($inners[1])
+                            $projectCarousel.append($inners[1]);
                         } else {
-                            $projectCarousel.append($inners[2])
+                            $projectCarousel.append($inners[2]);
                         }
                     }).resize();
 
