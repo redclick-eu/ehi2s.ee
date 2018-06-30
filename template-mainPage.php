@@ -14,8 +14,8 @@
                     <img class="carousel-img" src="<?= $img['sizes']['large'] ?>" alt="<?= $img['alt'] ?>" title="<?= $img['title'] ?>">
                     <div class="container d-flex flex-column">
                         <div class="row">
-                            <h2 class="col-12 offset-md-1 col-md-11 carousel-header"><?= get_sub_field('slides_header') ?></h2>
-                            <p class="col-12 offset-md-1 col-md-5  carousel-text"><?= get_sub_field('slides_text') ?></p>
+                            <h2 class="col-12 col-md-11 carousel-header"><?= get_sub_field('slides_header') ?></h2>
+                            <p class="col-12 col-md-5  carousel-text"><?= get_sub_field('slides_text') ?></p>
                         </div>
                     </div>
                 </div>
