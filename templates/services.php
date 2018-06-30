@@ -3,7 +3,7 @@
     <div class="row">
         <?php
         $args = [
-            'category_name' => 'services',
+            'category_name' => 'услуги',
         ];
         $list = new WP_Query($args);
         $projects;

@@ -9,7 +9,7 @@
     <div class="row">
         <?php
         $args = [
-            'category_name'=>'projects',
+            'category_name'=>'проекты',
         ];
         $list = new WP_Query($args);
         if ($list->have_posts()) : while($list->have_posts()) : $list->the_post(); ?>
