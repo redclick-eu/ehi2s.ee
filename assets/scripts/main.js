@@ -29,7 +29,7 @@
         var play = false;
 
         $(window).on('resize', function () {
-            play = parseInt(window.innerWidth) < 769;
+            play = parseInt(window.innerWidth) >= 769;
             if(!play) {
                 $photoCarousel.carousel(0);
             }
@@ -50,7 +50,7 @@
             });
 
             $photoCarousel.on('slide.bs.carousel', function (e) {
-                if (play) {
+                if (!play) {
                     e.preventDefault();
                 }
             });

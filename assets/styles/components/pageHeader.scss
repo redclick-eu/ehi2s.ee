@@ -21,4 +21,14 @@ h2.page-header {
     &_white {
         color: $white;
     }
+    @media (max-width: map-get($grid-breakpoints, lg)) {
+        margin-top: 20px;
+    }
 }
+
+body.home h2.page-header {
+    @media (max-width: map-get($grid-breakpoints, lg)) {
+        margin-top: 65px;
+    }
+}
+
