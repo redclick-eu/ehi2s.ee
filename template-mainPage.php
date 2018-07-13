@@ -11,7 +11,7 @@
             while (have_rows('slides')) : the_row();
                 $img = get_sub_field('slides_img'); ?>
                 <div class="carousel-item <?= $isFirst ? "active" : "" ?>">
-                    <img class="carousel-img" src="<?= $img['sizes']['large'] ?>" alt="<?= $img['alt'] ?>" title="<?= $img['title'] ?>">
+                    <img class="carousel-img" src="<?= $img['sizes']['large'] ?>" alt="<?= $img['alt'] ?>" title="<?= $img['title'] ?>"  style="filter: brightness(<?php the_field('slides-brightness') ?>%);">
                     <div class="container d-flex flex-column">
                         <div class="row">
                             <h2 class="col-12 col-md-11 carousel-header"><?= get_sub_field('slides_header') ?></h2>
@@ -72,7 +72,7 @@
 
         <div class="carousel-inner carousel-inner_1" role="listbox">
             <?php for ($i = 0; $i < $maxRows; $i = $i + 1): ?>
-                <div class="justify-content-center carousel-item   <?= !$i ? "active" : "" ?>">
+                <div class="justify-content-center carousel-item <?= !$i ? "active" : "" ?>" >
                     <a href="<?= $photos[$i]['href'] ?>" class="col-12 carousel-img" data-title="<?= $photos[$i]['pagetitle'] ?>"><img src="<?= $photos[$i]['src'] ?>" alt="<?= $photos[$i]['alt'] ?>" title="<?= $photos[$i]['title'] ?>"></a>
                 </div>
             <?php endfor; ?>
