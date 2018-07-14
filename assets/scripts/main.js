@@ -26,6 +26,7 @@
 
     function sliders() {
         var $photoCarousel = $('#photoCarousel');
+        var isMobileDevice = device.mobile() || device.tablet();
         var play = false;
 
         $(window).on('resize', function () {
@@ -34,7 +35,7 @@
                 $photoCarousel.carousel(0);
             }
         });
-        if ($photoCarousel.length) {
+        if ($photoCarousel.length && !isMobileDevice) {
             $photoCarousel.carousel({
                 interval: 4000
             });
@@ -54,6 +55,8 @@
                     e.preventDefault();
                 }
             });
+        } else if (isMobileDevice) {
+            $photoCarousel.remove()
         }
 
         var $projectCarousel = $('#projectCarousel');
