@@ -4,7 +4,7 @@
  */
 ?>
 <? if (have_rows('slides')): ?>
-    <div id="photoCarousel" class="carousel slide" data-ride="carousel">
+    <div id="photoCarousel" class="d-none d-lg-block carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
 
             <?php $isFirst = true;
