@@ -12,9 +12,11 @@
         <?php if (have_rows('project')): while (have_rows('project')) : the_row();
             $photo = get_sub_field('project_photo');
             ?>
-            <div class="col-12 col-md-6 projectsPost-item">
+            <div class="col-12 col-md-6 ">
                 <img class="projectsPost-img" src="<?= $photo['sizes']['large'] ?>" alt="<?= $photo['alt'] ?>" title="<?= $photo['title'] ?>">
-                <h3 class="projectsPost-textHeader"><?= get_sub_field('project_header') ?></h3>
+            </div>
+
+            <div class="col-12 col-md-6 projectsPost-text">
                 <?= get_sub_field('project_text') ?>
             </div>
         <?php
