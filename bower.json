@@ -7,9 +7,10 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.1.0"
+    "bootstrap": "^4.1.0",
+    "photoswipe": "^4.1.2"
   },
-    "overrides": {
+  "overrides": {
     "bootstrap": {
       "main": [
         "./scss/bootstrap-grid.scss",
@@ -17,6 +18,14 @@
         "./scss/_carousel.scss",
         "./scss/_modal.scss",
         "./dist/js/bootstrap.bundle.js"
+      ]
+    },
+    "photoswipe": {
+      "main": [
+        "./src/css/main.scss",
+        "./src/css/default-skin/default-skin.scss",
+        "./dist/photoswipe.js",
+        "./dist/photoswipe-ui-default.js"
       ]
     }
   }

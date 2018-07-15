@@ -56,7 +56,7 @@
                 }
             });
         } else if (isMobileDevice) {
-            $photoCarousel.remove()
+            $photoCarousel.remove();
         }
 
         var $projectCarousel = $('#projectCarousel');
@@ -181,6 +181,41 @@
         }
     }
 
+    function gallery() {
+        // Init empty gallery array
+        var container = [];
+        var gallery = $('#gallery_photoswipe');
+        // Loop over gallery items and push it to the array
+        gallery.find('figure').each(function() {
+            var $link = $(this).find('a'),
+                item = {
+                    src: $link.data('large'),
+                    w: $link.data('width'),
+                    h: $link.data('height'),
+                    title: $link.data('caption')
+                };
+            container.push(item);
+        });
+
+        // Define click event on gallery item
+        gallery.find('a').click(function(event) {
+
+            // Prevent location change
+            event.preventDefault();
+
+            // Define object and gallery options
+            var $pswp = $('.pswp')[0],
+                options = {
+                    index: $(this).parent('figure').index(),
+                    bgOpacity: 0.85,
+                    showHideOpacity: true
+                };
+
+            // Initialize PhotoSwipe
+            var gallery = new PhotoSwipe($pswp, PhotoSwipeUI_Default, container, options);
+            gallery.init();
+        });
+    }
     // Use this variable to set up the common and page specific functions. If you
     // rename this variable, you will also need to rename the namespace below.
     var Sage = {
@@ -205,6 +240,11 @@
             },
             finalize: function () {
                 // JavaScript to be fired on the home page, after the init JS
+            }
+        },
+        'post_template_template_gallery': {
+            init: function () {
+                gallery();
             }
         },
         // About us page, note the change from about-us to about_us.

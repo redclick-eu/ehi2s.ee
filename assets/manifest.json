@@ -6,11 +6,15 @@
         "scripts/main.js"
       ],
       "bower": [
-        "bootstrap"
+        "bootstrap",
+        "photoswipe"
       ],
       "main": true
     },
     "main.css": {
+      "bower": [
+      "photoswipe"
+      ],
       "files": [
         "styles/main.scss"
       ],
