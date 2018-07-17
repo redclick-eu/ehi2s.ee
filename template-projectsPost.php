@@ -13,7 +13,7 @@
             $photo = get_sub_field('project_photo');
             ?>
             <div class="col-12 col-md-6 ">
-                <img class="projectsPost-img" src="<?= $photo['sizes']['large'] ?>" alt="<?= $photo['alt'] ?>" title="<?= $photo['title'] ?>">
+                <img class="projectsPost-img" src="<?= $photo['sizes']['medium'] ?>" alt="<?= $photo['alt'] ?>" title="<?= $photo['title'] ?>">
             </div>
 
             <div class="col-12 col-md-6 projectsPost-text">
