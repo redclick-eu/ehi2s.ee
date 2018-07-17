@@ -218,6 +218,20 @@
         });
     }
 
+    function setImageUrl() {
+        var $images = $('[data-small][data-large]');
+        $(window).on('resize',function () {
+            if(window.innerWidth <992 && $images.attr('src') !== $images.data('large')) {
+                $images.each(function () {
+                    $(this).attr('src',$(this).data('large'));
+                });
+            } else if(window.innerWidth >=992 && $images.attr('src') !== $images.data('small')){
+                $images.each(function () {
+                    $(this).attr('src',$(this).data('small'));
+                });
+            }
+        }).resize();
+    }
     // Use this variable to set up the common and page specific functions. If you
     // rename this variable, you will also need to rename the namespace below.
     var Sage = {
@@ -230,6 +244,7 @@
                 up();
                 urlToGoogleMaps();
                 formValidation();
+                setImageUrl();
             },
             finalize: function () {
                 // JavaScript to be fired on all pages, after page specific JS is fired
