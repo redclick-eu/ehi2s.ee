@@ -11,7 +11,7 @@
             while (have_rows('slides')) : the_row();
                 $img = get_sub_field('slides_img'); ?>
                 <div class="carousel-item <?= $isFirst ? "active" : "" ?>">
-                    <img class="carousel-img" src="<?= $img['sizes']['large'] ?>" alt="<?= $img['alt'] ?>" title="<?= $img['title'] ?>"  style="filter: brightness(<?php the_field('slides-brightness') ?>%);">
+                    <img class="carousel-img" src="<?= $img['url'] ?>" alt="<?= $img['alt'] ?>" title="<?= $img['title'] ?>"  style="filter: brightness(<?php the_field('slides-brightness') ?>%);">
                     <div class="container d-flex flex-column">
                         <div class="row">
                             <h2 class="col-12 col-md-11 carousel-header"><?= get_sub_field('slides_header') ?></h2>
