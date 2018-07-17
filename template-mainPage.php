@@ -43,7 +43,7 @@
         if ($list->have_posts()) : while ($list->have_posts()) : $list->the_post();
             $field = get_field('project_logo');
             $photos[] = [
-                'src' => $field['sizes']['large'],
+                'src' => $field['sizes']['thumbnail'],
                 'alt' => $field['alt'],
                 'title' => $field['title'],
                 'href' => get_permalink(),
