@@ -14,7 +14,7 @@
             while (have_rows('photos')) : the_row();
                 $subField = get_sub_field('photos_photo'); ?>
                 <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject" class="col-12 col-md-6">
-                    <a href="<?= $subField['url'] ?>" data-caption="<?= $subField['alt'] ?>" data-width="100%" data-height="100%" data-large="<?= $subField['sizes']['large'] ?>" itemprop="contentUrl">
+                    <a href="<?= $subField['url'] ?>" data-caption="<?= $subField['alt'] ?>" data-large="<?= $subField['sizes']['large'] ?>" itemprop="contentUrl">
                         <img class="galleryPSWP-item" src="<?= $subField['sizes']['large'] ?>" alt="<?= $subField['alt'] ?>" title="<?= $subField['title'] ?>">
                     </a>
                 </figure>
