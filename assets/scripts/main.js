@@ -187,11 +187,11 @@
         var gallery = $('#gallery_photoswipe');
         // Loop over gallery items and push it to the array
         gallery.find('figure').each(function() {
-            var $link = $(this).find('a'),
-                item = {
+            var $link = $(this).find('a');
+                var item = {
                     src: $link.data('large'),
-                    w: $link.data('width'),
-                    h: $link.data('height'),
+                    w: $('.galleryPSWP-item',$link)[0].naturalWidth,
+                    h: $('.galleryPSWP-item',$link)[0].naturalHeight,
                     title: $link.data('caption')
                 };
             container.push(item);
