@@ -303,3 +303,8 @@ function sendMail_callback(){
     $headers .= 'Reply-To: ' . $_POST['mail'] . "\r\n";;
     wp_mail($to, $subject, $message,$headers);
 };
+
+add_filter( 'jpeg_quality',  __NAMESPACE__ . 'custom_jpeg_quality', 10, 2 );
+function custom_jpeg_quality() {
+    return 100;
+}

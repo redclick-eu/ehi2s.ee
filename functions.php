@@ -26,8 +26,3 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
-
-function custom_jpeg_quality( $quality, $context ) {
-	return 100;
-}
-add_filter( 'jpeg_quality', 'custom_jpeg_quality', 10, 2 );
