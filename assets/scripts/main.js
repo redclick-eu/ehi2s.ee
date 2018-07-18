@@ -197,7 +197,6 @@
                 };
             container.push(item);
         });
-        console.log(container);
         // Define click event on gallery item
         gallery.find('a').click(function (event) {
 
