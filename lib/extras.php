@@ -290,10 +290,6 @@ function sendMail_callback(){
         <td>'.rc_t('Телефон',0).'</td>
         <td>'.$_POST['phone'].'</td>
       </tr>
-       <--!<tr>
-        <td>'.rc_t('Источник',0).'</td>
-        <td><a href="'.$_POST['pageUrl'].'">'.$_POST['pageName'].'</a></td>
-      </tr>-->
       <tr>
         <td>'.rc_t('Сообщение',0).'</td>
         <td>'.$_POST['text'].'</td>
