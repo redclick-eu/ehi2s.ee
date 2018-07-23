@@ -48,7 +48,7 @@
                     </div>
                     <div class="row">
                         <div class="col-4 offset-8 d-flex justify-content-end">
-                            <input type="submit" name="smb" class="form-submit" value="<?php rc_t('Отправить', 1) ?>">
+                            <input type="submit" name="smb" class="form-submit g-recaptcha" data-sitekey="6LeIzGUUAAAAAPSEOjQAAtQG6iDPVGGGGS7COQkJ" data-callback="formValidation" value="<?php rc_t('Отправить', 1) ?>">
                         </div>
                     </div>
                 </form>

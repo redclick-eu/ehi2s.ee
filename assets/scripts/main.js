@@ -117,71 +117,6 @@
         }
     }
 
-    function formValidation() {
-        var $form = $('#form');
-        if ($form.length) {
-            var reg = {
-                "phone": /^((8|\+)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/i,
-                "mail": /^[-._a-z0-9]+@(?:[a-z0-9][-a-z0-9]+\.)+[a-z]{2,6}$/i,
-                "name": /\S+/
-            };
-
-            $form.find('input').on('input', function () {//Валидация инпутов по отдельности в реальном времени
-                var name = $(this).attr('name');
-                $(this).removeClass('invalid');
-                if (!$(this).val().match(reg[name]) || name === "info" && !$(this).prop("checked")) {
-                    $(this).addClass('invalid');
-                }
-            });
-
-
-            $form.find(' .form-submit').on('click', function (event) {
-
-                var data = {
-                    'name': $form.find(" [name='name']").val(),
-                    'mail': $form.find(" [name='mail']").val(),
-                    'phone': $form.find(" [name='phone']").val(),
-                    'text': $form.find(" [name='text']").val(),
-                    'pageName': $form.find(" [name='pageName']").val(),
-                    'pageUrl': $form.find(" [name='pageUrl']").val(),
-                    'id': $form.find(" [name='id']").val()
-                };
-
-                var passed = { //Final validation
-                    'name': data.name.length,
-                    'phone': data.phone.match(reg.phone),
-                    'mail': data.mail.match(reg.mail)
-                };
-
-                if (passed.phone && passed.mail && passed.name) {
-                    $.ajax({
-                        type: 'POST',
-                        url: "/wp-admin/admin-ajax.php?action=sendMail",
-                        data: data,
-                        success: function () {
-                            var $answerForm = $('#form-answer');
-                            $answerForm.click();
-                            $(document).on('click', function close() {
-                                $(document).off('click', close);
-                                $answerForm.modal('hide');
-                            });
-                            $form.find('input:not([type="submit"])').removeClass('invalid').val("");
-                            $form.find('textarea').val("");
-                        }
-                    });
-                } else {
-                    for (var key in passed) {
-                        if (!passed[key]) {
-                            $form.find(" [name='" + key + "']").addClass('invalid');
-                        }
-                    }
-                }
-
-                event.preventDefault();
-            });
-        }
-    }
-
     function gallery() {
         // Init empty gallery array
         var container = [];
@@ -314,4 +249,69 @@ function initMap() {
     var map = new google.maps.Map(
         document.getElementById('map'), {zoom: 17, center: point});
     var marker = new google.maps.Marker({position: point, map: map});
+}
+
+function formValidation() { // Global function for ReCAPTCHA Invisible
+    var $ = jQuery;
+    var $form = $('#form');
+    if ($form.length) {
+        var reg = {
+            "phone": /^((8|\+)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/i,
+            "mail": /^[-._a-z0-9]+@(?:[a-z0-9][-a-z0-9]+\.)+[a-z]{2,6}$/i,
+            "name": /\S+/
+        };
+
+        $form.find('input').on('input', function () {//Валидация инпутов по отдельности в реальном времени
+            var name = $(this).attr('name');
+            $(this).removeClass('invalid');
+            if (!$(this).val().match(reg[name]) || name === "info" && !$(this).prop("checked")) {
+                $(this).addClass('invalid');
+            }
+        });
+
+
+        $form.find(' .form-submit').on('click', function (event) {
+            var data = {
+                'name': $form.find(" [name='name']").val(),
+                'mail': $form.find(" [name='mail']").val(),
+                'phone': $form.find(" [name='phone']").val(),
+                'text': $form.find(" [name='text']").val(),
+                'pageName': $form.find(" [name='pageName']").val(),
+                'pageUrl': $form.find(" [name='pageUrl']").val(),
+                'id': $form.find(" [name='id']").val()
+            };
+
+            var passed = { //Final validation
+                'name': data.name.length,
+                'phone': data.phone.match(reg.phone),
+                'mail': data.mail.match(reg.mail)
+            };
+
+            if (passed.phone && passed.mail && passed.name) {
+                $.ajax({
+                    type: 'POST',
+                    url: "/wp-admin/admin-ajax.php?action=sendMail",
+                    data: data,
+                    success: function () {
+                        var $answerForm = $('#form-answer');
+                        $answerForm.modal('show');
+                        $(document).on('click', function close() {
+                            $(document).off('click', close);
+                            $answerForm.modal('hide');
+                        });
+                        $form.find('input:not([type="submit"])').removeClass('invalid').val("");
+                        $form.find('textarea').val("");
+                    }
+                });
+            } else {
+                for (var key in passed) {
+                    if (!passed[key]) {
+                        $form.find(" [name='" + key + "']").addClass('invalid');
+                    }
+                }
+            }
+
+            event.preventDefault();
+        });
+    }
 }
