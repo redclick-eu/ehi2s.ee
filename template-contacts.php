@@ -53,7 +53,7 @@
                     </div>
                 </form>
                 <div id="form-answer" class=" align-items-center justify-content-center" data-toggle="modal" data-target="#form-answer">
-                    Ваше сообщение получено!<br>Мы с Вами свяжемся в ближайшее время.
+                    <?php rc_t('Ваше сообщение получено!<br>Мы с Вами свяжемся в ближайшее время.',1) ?>
                 </div>
             </div>
         </div>
