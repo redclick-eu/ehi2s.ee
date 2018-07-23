@@ -165,7 +165,8 @@
                                 $(document).off('click', close);
                                 $answerForm.modal('hide');
                             });
-                            $form.find('input:not([type="submit"])', 'textarea').removeClass('invalid').val("");
+                            $form.find('input:not([type="submit"])').removeClass('invalid').val("");
+                            $form.find('textarea').val("");
                         }
                     });
                 } else {

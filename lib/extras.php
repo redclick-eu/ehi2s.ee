@@ -275,10 +275,11 @@ function sendMail_callback(){
     $page->the_post();
     $to =  get_field('i_mail');
     $subject= 'Сообщение '.$_POST['id'].' от '.$_POST['name'];
+
     $message = '
     <table>     
       <tr>
-        <td>Имя</td>
+        <td>'.rc_t('Имя',0).'</td>
         <td>'.$_POST['name'].'</td>
       </tr>
       <tr>
@@ -286,15 +287,15 @@ function sendMail_callback(){
         <td>'.$_POST['mail'].'</td>
       </tr>
       <tr>
-        <td>Телефон</td>
+        <td>'.rc_t('Телефон',0).'</td>
         <td>'.$_POST['phone'].'</td>
       </tr>
-       <tr>
-        <td>Источник </td>
+       <--!<tr>
+        <td>'.rc_t('Источник',0).'</td>
         <td><a href="'.$_POST['pageUrl'].'">'.$_POST['pageName'].'</a></td>
-      </tr>
+      </tr>-->
       <tr>
-        <td>Сообщение</td>
+        <td>'.rc_t('Сообщение',0).'</td>
         <td>'.$_POST['text'].'</td>
       </tr>
     </table>
