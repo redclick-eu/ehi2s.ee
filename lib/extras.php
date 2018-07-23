@@ -274,7 +274,7 @@ function sendMail_callback(){
     $page = new WP_Query(['pagename' => 'mainpage']);
     $page->the_post();
     $to =  get_field('i_mail');
-    $subject= 'Сообщение '.$_POST['id'].' от '.$_POST['name'];
+    $subject= rc_t('Сообщение',0).' '.$_POST['id'].' от '.$_POST['name'];
 
     $message = '
     <table>     
