@@ -35,7 +35,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12 col-sm-6">
-                            <input type="tel" name="phone" class="form-input js-modal-input" placeholder="<?php rc_t('Телефон', 1) ?>*" pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
+                            <input type="tel" name="phone" class="form-input js-modal-input" placeholder="<?php rc_t('Телефон', 1) ?>*" pattern="^((8|\+)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$">
                         </div>
                         <div class="col-12 col-sm-6">
                             <input type="email" name="mail" class="form-input js-modal-input" placeholder="<?php rc_t('E-mail', 1) ?>*" pattern="^[-._a-z0-9]+@(?:[a-z0-9][-a-z0-9]+\.)+[a-z]{2,6}$">
