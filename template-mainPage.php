@@ -3,7 +3,7 @@
  * Template Name: Main page
  */
 ?>
-<? if (have_rows('slides')): ?>
+<?php if (have_rows('slides')): ?>
     <div id="photoCarousel" class="d-none d-lg-block carousel slide" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
 

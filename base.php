@@ -11,7 +11,7 @@ use Roots\Sage\Wrapper;
   <body <?php body_class(); ?>>
     <!--[if IE]>
       <div class="alert alert-warning">
-          <div class="alert alert-warning"><? rc_t('Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browser.yandex.ru/">обновите свой браузер</a> для корректного отображения страниц сайта.',1) ?></div>
+          <div class="alert alert-warning"><?php rc_t('Вы используете <strong>устаревший</strong> браузер. Пожалуйста <a href="http://browser.yandex.ru/">обновите свой браузер</a> для корректного отображения страниц сайта.',1) ?></div>
       </div>
     <![endif]-->
     <?php
