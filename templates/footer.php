@@ -33,13 +33,4 @@
         <span class="copyright"><?= get_field('i_copyright'); ?></span>
         <?php wp_reset_postdata(); ?>
     </div>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-MQGECQW6VB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-MQGECQW6VB');
-</script>
 </footer>
